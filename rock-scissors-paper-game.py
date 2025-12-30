@@ -32,7 +32,7 @@ print()
 
 '''generate random choice'''
 things= ['scissors','rock','paper']
-computer_choice= random.choice(things)
+#computer_choice= random.choice(things)
 #print(computer_choice)
 
 user_mark= 0
@@ -41,8 +41,9 @@ computer_mark=0
 '''get inputs from user'''
 print('To game over enter -1')
 while True:
+    computer_choice= random.choice(things)
     user_input= input('Enter your choice: ').lower().strip()
-    if user_input == -1:
+    if user_input == '-1':
         break
 
     elif user_input == 's' or user_input == 'sc' or user_input == 'sci' or user_input == 'scis' or user_input == 'sciss' \
@@ -61,7 +62,7 @@ while True:
     elif user_input == 'r' or user_input == 'ro' or user_input == 'roc' or user_input == 'rock' :
         user_input= 'rock'
         if user_input == 'rock' and computer_choice == 'scissors' :
-            print('You win.')
+            print('You won.')
             user_mark += 1
         elif user_input == computer_choice:
             print('Both are same.')
@@ -83,7 +84,8 @@ while True:
     else:
         print('Something Went Wrong.')
     print()
-
+    
+diff_mark = 0
 if user_mark > computer_mark:
     diff_mark = user_mark- computer_mark
 elif computer_mark > user_mark:
