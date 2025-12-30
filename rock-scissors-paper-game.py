@@ -44,17 +44,56 @@ while True:
     user_input= input('Enter your choice: ').lower().strip()
     if user_input == -1:
         break
+
     elif user_input == 's' or user_input == 'sc' or user_input == 'sci' or user_input == 'scis' or user_input == 'sciss' \
                             or user_input == 'scisso' or user_input == 'scissor' or user_input == 'scissors':
         user_input= 'scissors'
-        if user_input == 'scissors' and computer_choice == 'paper' : 
+        if user_input == 'scissors' and computer_choice == 'paper' :
+            print('You won.')
             user_mark += 1
         elif user_input == computer_choice:
+            print('Both are same.')
             pass
         else:
-            computer_mark += 1      
+            print('You lose.')
+            computer_mark += 1 
+
     elif user_input == 'r' or user_input == 'ro' or user_input == 'roc' or user_input == 'rock' :
-        if 'rock' == computer_choice:
+        user_input= 'rock'
+        if user_input == 'rock' and computer_choice == 'scissors' :
+            print('You win.')
             user_mark += 1
+        elif user_input == computer_choice:
+            print('Both are same.')
         else:
-            computer_mark
+            print('You lose.')
+            computer_mark += 1
+
+    elif user_input == 'p' or user_input == 'pa' or user_input == 'pap' or user_input == 'pape' or user_input == 'paper':
+        user_input = 'paper'
+        if user_input == 'paper' and computer_choice == 'rock':
+            print('You won')
+            user_mark += 1
+        elif user_input == computer_choice:
+            print('Both are same.')
+            pass
+        else:
+            print('You lose.')
+            computer_mark += 1
+    else:
+        print('Something Went Wrong.')
+    print()
+
+if user_mark > computer_mark:
+    diff_mark = user_mark- computer_mark
+elif computer_mark > user_mark:
+    diff_mark = computer_mark - user_mark
+else:
+    pass
+
+print(f'Your mark is {user_mark}.')
+print(f"The progarame's mark is {computer_mark}.")
+print(f'You won by {diff_mark} marks.')
+print()
+
+print('End')
