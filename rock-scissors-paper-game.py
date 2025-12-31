@@ -84,18 +84,19 @@ while True:
     else:
         print('Something Went Wrong.')
     print()
-    
-diff_mark = 0
-if user_mark > computer_mark:
-    diff_mark = user_mark- computer_mark
-elif computer_mark > user_mark:
-    diff_mark = computer_mark - user_mark
-else:
-    pass
 
 print(f'Your mark is {user_mark}.')
 print(f"The progarame's mark is {computer_mark}.")
-print(f'You won by {diff_mark} marks.')
-print()
 
+diff_mark = 0
+if user_mark > computer_mark:
+    diff_mark = user_mark- computer_mark
+    print(f'You won by {diff_mark} marks.')
+elif computer_mark > user_mark:
+    diff_mark = computer_mark - user_mark
+    print(f'Computer won by {diff_mark} marks.')
+else:
+    pass
+
+print()
 print('End')
